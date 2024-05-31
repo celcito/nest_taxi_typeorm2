@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersService } from './user.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { User } from './user.entity'; // Certifique-se de importar a entidade User correta
+import { User } from './user.entity';
 
 describe('UserService', () => {
   let service: UsersService;
@@ -13,7 +13,7 @@ describe('UserService', () => {
         UsersService,
         {
           provide: getRepositoryToken(User),
-          useClass: User, // Substitua 'User' pela sua implementação real do repositório, se diferente
+          useClass: User,
         },
       ],
     }).compile();
@@ -26,5 +26,5 @@ describe('UserService', () => {
     expect(service).toBeDefined();
   });
 
-  // Adicione aqui seus testes para o UserService
+
 });
