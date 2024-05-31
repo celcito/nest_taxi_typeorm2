@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {ConfigModule} from '@nestjs/config'
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
@@ -19,7 +20,7 @@ import {ConfigModule} from '@nestjs/config'
     migrations: ['./migrations/*.ts'],
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
     migrationsRun: false,
-  }),UsersModule],
+  }),UsersModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 
